@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+    include ../header-with-back-button
+    .col-6.mx-auto.text-center.pt-3
+        video#video(width='320', height='240', style='border: 1px solid gray', data-amount=amount)
+    include ../checkmark
+    include ../spinner
+block post-default-scripts
+    script(src='/javascripts/zxing.min.js')
+    script(src='/javascripts/cashier/scan.js')

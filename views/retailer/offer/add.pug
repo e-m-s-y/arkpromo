@@ -1,0 +1,28 @@
+extends ../../layout
+
+block content
+    include ../../header-with-back-button
+    .container.col-12.pr-0
+        form.text-left.overflow-auto.pr-5.pl-5(action='/retailer/offer/add', method='POST', style="height: 313px; overflow-x: hidden !important;")
+            .form-group.row
+                label.col-4.col-form-label Name
+                .col-8
+                    input.form-control(name='name', placeholder='Enter name', required)
+            .form-group.row
+                label.col-4.col-form-label Token price
+                .col-8
+                    input.form-control(type='number', name='token_price', placeholder='0', min='1', max='1000' step="1", required)
+            .form-group.row
+                label.col-4.col-form-label Reference (this will be stored on the blockchain)
+                .col-8
+                    input.form-control(name='reference', placeholder='Enter reference', required)
+            .form-group.row
+                label.col-4.col-form-label Description
+                .col-8
+                    textarea.form-control(name='description', placeholder='Enter description, this will be shown to the customer', rows='3', required)
+            .form-group.row
+                label.col-4.col-form-label(for='example-datetime-local-input') Expires at
+                .col-8
+                    input#example-datetime-local-input.form-control(name='expires', type='datetime-local')
+            .col-12.mx-auto.text-center
+                button.mt-auto.btn.btn.btn-primary(type='submit') Add

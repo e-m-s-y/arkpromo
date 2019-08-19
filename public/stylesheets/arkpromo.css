@@ -1,0 +1,44 @@
+.icon {
+    width: 1em;
+    height: 1em;
+}
+
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.bg-light-blue {
+    background-color: #202333 !important;
+}
+
+.bg-dark-blue {
+    background-color: #171820 !important;
+}
+
+.bg-red {
+    background-color: #f13738 !important;
+}
+
+.bg-light-grey {
+    background-color: #fafafa !important;
+}
+
+body {
+    /*background-color: #c9292c !important;*/
+}
+
+h1, p {
+    color: #fff !important;
+}
+
+#checkmark {
+    font-size: 100px;
+    color: limegreen;
+    display: none;
+}
+
+#spinner {
+    display: none;
+}

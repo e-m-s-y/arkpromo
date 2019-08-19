@@ -1,0 +1,15 @@
+{
+  "name": "@emsy/event-forwarder",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Forwards blockchain events to an application.",
+  "author": "https://github.com/e-m-s-y",
+  "scripts": {},
+  "main": "src/index.js",
+  "directories": {
+    "src": "src"
+  },
+  "dependencies": {
+    "socketcluster-client": "^14.3.0"
+  }
+}

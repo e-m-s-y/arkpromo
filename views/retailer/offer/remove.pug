@@ -1,0 +1,27 @@
+extends ../../layout
+
+block content
+    include ../../header-with-back-button
+    .row.col-12.pr-3.pl-3.pt-3.mx-auto
+        if offers.length === 0
+            .col-8.text-center.mx-auto
+                h3.lead There are no offers at the moment.
+        else
+            .col-4
+                #list-item-tab.list-group(role='tablist')
+                    each offer,index in offers
+                        - var classes = 'list-group-item list-group-item-action';
+                        - var classes = (index === 0) ? classes + ' active' : classes;
+                        a(id="list-item-#{offer.id}" class=classes data-toggle='list', href='#list-item-tab-#{offer.id}', role='tab') #{offer.name}
+            .col-8
+                #nav-tabContent.tab-content
+                    each offer,index in offers
+                        - var classes = 'tab-pane fade show';
+                        - var classes = (index === 0) ? classes + ' active' : classes;
+                        div(id="list-item-tab-#{offer.id}" class=classes aria-labelledby='list-item-#{offer.id}', role='tabpanel')
+                            .col-12.pb-3
+                                | !{offer.description}
+                                br
+                                br
+                                | This offer costs #{offer.token_price} tokens and expires on #{offer.expires}
+                            a.btn.btn-lg.btn-danger.float-right(href="/retailer/remove/offer?id=#{offer.id}") Remove

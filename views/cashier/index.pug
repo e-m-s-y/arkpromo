@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+    include ../header-with-back-button
+    .col-6.mx-auto.pt-3
+        form(action="/cashier/scan" method='POST' data-arktoshi-per-whole=process.env.TOKENS_PER_SINGLE_FIAT)
+            .form-group
+                label(for='spendingAmountInFiat') Spending amount in fiat
+                input#spendingAmountInFiat.form-control(type='number', min="0" step="0.01" name='spendingAmountInFiat' placeholder="0,00" required)
+                i#tokenAmount Enter spendings to calculate the amount of tokens
+            button.btn.btn-primary(type='submit') Start scanning process
+block post-default-scripts
+    script(src='/javascripts/cashier/index.js')
