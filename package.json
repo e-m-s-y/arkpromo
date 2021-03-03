@@ -17,7 +17,7 @@
     "http-errors": "~1.6.2",
     "constantinople": "3.1.2",
     "ip": "^1.1.5",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "morgan": "~1.9.0",
     "node-cron": "^2.0.3",
     "qrious": "^4.0.2",
